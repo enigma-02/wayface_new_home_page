@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayfare Travels - 5-Day Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <nav class="navbar sticky-nav">
+        <div class="logo">Wayfare.</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="https://enigma-02.github.io/wayfare_reviews/">Reviews</a></li>
+            <li><a href="https://enigma-02.github.io/wayfare_about_us/">About Us</a></li>
+            <li><a href="https://enigma-02.github.io/wayfare_book_now_form/" class="book-btn">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Wayfare.</h1>
+            <p>"Search and Plan Your 5-Day Journey"</p>
+
+            <div class="hero-search-container">
+                <input type="text" id="heroDestinationInput" class="search-input" placeholder="Destination (e.g. Maldives, Varanasi)..." autocomplete="off">
+                <select id="heroThemeSelect" class="search-select">
+                    <option value="">Theme/Vibe...</option>
+                    <option value="family">Family Trip</option>
+                    <option value="adventure">Adventure Trip</option>
+                    <option value="romantic">Romantic Trip</option>
+                    <option value="solo">Solo Trip</option>
+                    <option value="devotional">Devotional Trip</option>
+                </select>
+                <select id="heroDurationSelect" class="search-select">
+                    <option value="5">Duration (Default: 5 Days)</option>
+                    <option value="3">3 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="7">7 Days</option>
+                </select>
+                <button onclick="handleHeroSearch()" class="search-btn">
+                    <i class="fa fa-search"></i> Plan Trip
+                </button>
+                <div id="suggestionsBox" class="suggestions-box"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="itinerary-preview-section">
+        <h2>Curated Itineraries: Quality Over Quantity</h2>
+        <p>Wayfare focuses on high-trust, hand-picked 5-Day plans designed for the best experience.</p>
+
+        <div id="itineraryDetailCard" class="detail-card">
+            </div>
+
+    </section>
+
+    <section class="cta-newsletter">
+        <div class="cta-content">
+            <h3>Stay in the Loop!</h3>
+            <p>Get exclusive early access to new 5-Day itineraries and travel tips.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="tripTypeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Explore <span id="modalDestinationName"></span></h3>
+            <p>What kind of experience do you want?</p>
+            <div id="modalOptions" class="modal-options">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

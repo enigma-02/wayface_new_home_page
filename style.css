@@ -1,0 +1,310 @@
+/* --- GLOBAL RESET & TYPOGRAPHY --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+h1, h2, h3 { font-family: 'Arial Black', sans-serif; }
+a { text-decoration: none; }
+
+/* --- 1. STICKY NAVIGATION BAR (Updated) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: rgba(0, 0, 0, 0.95); /* Darker, near-black for professional look */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    color: #ff7e5f; /* Accent color for the logo */
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+/* LINKS */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff7e5f;
+}
+
+.book-btn {
+    background-color: #ff7e5f;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white !important; /* Override white hover */
+}
+
+.book-btn:hover {
+    background-color: #eb4d4b;
+}
+
+/* --- 2. HERO SECTION & CENTER SEARCH (New) --- */
+.hero-section {
+    height: 100vh;
+    /* High-quality travel image from Unsplash/Pexels */
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-top: 65px; /* Account for fixed navbar */
+}
+
+.hero-content h1 { 
+    font-size: 4.5em; 
+    margin: 0; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+.hero-content p { 
+    font-size: 1.6em; 
+    margin-top: 10px; 
+    font-style: italic; 
+    margin-bottom: 30px;
+}
+
+/* Hero Search Form Styles */
+.hero-search-container {
+    display: flex;
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    position: relative;
+    max-width: 900px;
+    width: 90%;
+}
+
+.search-input, .search-select {
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+    min-width: 0; /* Allows flex items to shrink */
+}
+
+.search-input { border-right: 1px solid #ddd; border-radius: 0; }
+.search-select { border-right: 1px solid #ddd; }
+.search-select:last-of-type { border-right: none; }
+
+.search-btn {
+    padding: 12px 25px;
+    background-color: #ff7e5f;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 8px;
+}
+
+.search-btn:hover { background-color: #eb4d4b; }
+
+/* Suggestions Box for Hero Search */
+.suggestions-box {
+    position: absolute;
+    top: 60px; /* Position below the inputs */
+    left: 8px; /* Aligned with the destination input */
+    width: calc(25% - 8px); /* Width of the input field, adjusted for padding */
+    background: white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1001;
+    overflow: hidden;
+    display: none; 
+    text-align: left;
+}
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+}
+.suggestion-item:hover { background-color: #f0f0f0; }
+
+
+/* --- 3. ITINERARY PREVIEW SECTION --- */
+.itinerary-preview-section {
+    padding: 50px 5%;
+    text-align: center;
+    background: #f7f7f7;
+}
+.itinerary-preview-section h2 {
+    color: #444;
+    margin-bottom: 10px;
+}
+.itinerary-preview-section p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Detail Card Styling (Example for future use) */
+.detail-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+.card-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+.card-images img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.map-link {
+    color: #ff7e5f;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+/* --- 4. CALL TO ACTION / NEWSLETTER (New) --- */
+.cta-newsletter {
+    background: #333;
+    padding: 60px 5%;
+    text-align: center;
+}
+.cta-content h3 {
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+.cta-content p {
+    color: #ccc;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+}
+.newsletter-form button {
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.newsletter-form button:hover { background: #eb4d4b; }
+
+
+/* --- 5. MODAL STYLES (Kept the same) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0; width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.7); 
+    backdrop-filter: blur(4px);
+}
+.modal-content {
+    background-color: #fff; margin: 15% auto; padding: 25px; 
+    border-radius: 12px; width: 90%; max-width: 400px; text-align: center;
+}
+.modal-options { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.option-btn { padding: 12px; border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s; }
+.option-btn:hover { transform: scale(1.02); }
+
+/* Button Colors */
+.family-btn { background: linear-gradient(to right, #9c27b0, #ce93d8); }
+.adventure-btn { background: linear-gradient(to right, #a0522d, #cd853f); }
+.romantic-btn { background: linear-gradient(to right, #ff3355, #ff80ab); }
+.solo-btn { background: linear-gradient(to right, #2196f3, #64b5f6); }
+.devotional-btn { background: linear-gradient(to right, #ff8c00, #ffd700); }
+
+.close-btn { float: right; font-size: 24px; cursor: pointer; color: #333; }
+
+
+/* --- 6. MOBILE RESPONSIVENESS (New) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 3%;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .hero-search-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .search-input, .search-select, .search-btn {
+        width: 100%;
+        margin: 5px 0;
+        border-right: none !important;
+        border-radius: 5px;
+    }
+    .search-btn {
+        margin-left: 0;
+    }
+    .suggestions-box {
+        width: calc(100% - 20px); /* Adjust width to full container width */
+        left: 10px;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .newsletter-form button {
+        margin-top: 10px;
+    }
+    .card-images {
+        grid-template-columns: 1fr; /* Stack images on mobile */
+    }
+}
